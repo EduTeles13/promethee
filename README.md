@@ -13,7 +13,6 @@ Ao executá-lo, é necessário importar uma planilha excel com os valores de cri
 | D7 | 6  | 10 | 9   |
 | D8 | 1  | 2  | 6   |
 |    | 0.4| 0.5| 0.1 |
-|    | True| True| False|
 
 
 Onde c1, c2, c3 são os critéirios escolhidos, d1, d2, d3 são os problemas escolhidos, e na linha logo abaixo do ultimo problema deve ser 
