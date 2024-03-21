@@ -30,7 +30,7 @@ def pop_window():
 # Função para processar o clique dos botões
 def process_button_click(tipo):
     if tipo == 2 or tipo == 3:
-        # Criar nova janela para digitar q e p
+        # Criar nova janela para digitar q
         input_window = pop_window()
         label_q = Label(input_window, text="Valor de q:")
         label_q.pack()
@@ -70,7 +70,7 @@ def process_button_click(tipo):
     else:
         # Chamada da função promethee
         q, p = 0 , 0
-        phi = promethee(df, pesos, objetivos, tipo, q, p)
+        phi = promethee(df, pesos, tipo, q, p)
         
         # Atualiza o DataFrame com os resultados
         new_df = df.copy(deep=True)
@@ -88,7 +88,7 @@ def process_with_variables(tipo, q, p, window):
         p = None
 
     # Chamada da função promethee
-    phi = promethee(df, pesos, objetivos, tipo, q, p)
+    phi = promethee(df, pesos, tipo, q, p)
     
     # Atualiza o DataFrame com os resultados
     new_df = df.copy(deep=True)
@@ -105,7 +105,6 @@ def import_excel():
     global linhas
     global colunas
     global pesos
-    global objetivos
     global dados
     global df
     # Abre uma janela de seleção de arquivo para o usuário escolher o arquivo Excel
@@ -116,17 +115,12 @@ def import_excel():
         excel_data = pd.read_excel(file_path)
         print(excel_data)
     
+        # Pega o Df do excel e o trata para pegar a lista de critérios, problemas, pesos, etc
         excel_data['Unnamed: 0'] = excel_data['Unnamed: 0'].fillna(0)
         linhas = list(excel_data['Unnamed: 0'])
         linhas = [x for x in linhas if x != 0]
         colunas = excel_data.columns.values[1:]
         pesos = list(excel_data.iloc[len(linhas)][1:])
-        objetivos = list(excel_data.iloc[len(linhas)+1][1:])
-        for i in range(len(objetivos)):
-            if objetivos[i] == 0:
-                objetivos[i] = False
-            else:
-                objetivos[i] = True
         
         dados = []
         for i in range(len(linhas)):
@@ -136,8 +130,6 @@ def import_excel():
         df = pd.DataFrame(data=dados,index=linhas,columns=colunas)
 
         return df
-
-
 
 # Criando a janela principal
 root = Tk()
