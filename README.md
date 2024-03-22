@@ -1,5 +1,20 @@
+Esse código também foi upado como uma biblioteca, pode ser acessado através do link:
+
+https://pypi.org/project/Promethee/1.0/
+
+Instale com o pip:
+
+`pip install Promethee==1.0`
+
+importe com o código:
+
+`from Promethee import promethee`
+
+----------------------------------------------------------------------------------------------------------------------
+
+O executável do código está dentro da pasta 'PROMETHEEII'.
 Essa aplicação executa o algoritmo de PROMETHEE II para ordenar problemas com base em critérios e fornecer um ranking.
-Ao executá-lo, é necessário importar uma planilha excel com os valores de critério e de problemas, seguindo o seguinte padrão:
+Ao executá-lo, é necessário importar uma planilha excel com os valores de critério e de problemas, seguindo o seguinte padrão (no repositório já tem uma planilha exemplo):
 
   
 |    | C1 | C2 | C3  |
@@ -16,8 +31,7 @@ Ao executá-lo, é necessário importar uma planilha excel com os valores de cri
 
 
 Onde c1, c2, c3 são os critéirios escolhidos, d1, d2, d3 são os problemas escolhidos, e na linha logo abaixo do ultimo problema deve ser 
-colocado os valores dos pesos na ordem de cada critério e True ou False para definir se aquele critério é de maximização ou de minimização, 
-onde True = minimização e False = maximização. (a planilha no repositório traz um exemplo de como o modelo deve ser)
+colocado os valores dos pesos na ordem de cada critério. (a planilha no repositório traz um exemplo de como o modelo deve ser)
 
 Após a importação da planilha, basta selecionar qual o função que prefere utilizar, entre elas estão:
 
@@ -29,3 +43,5 @@ Após a importação da planilha, basta selecionar qual o função que prefere u
 6. Gaussion Criterion
 
 A aplicação retornará na tela cada problema com os seus respectivos valores de fluxo líquido.
+
+OBS.: Uma limitação desse código é que a função de preferência é aplicada a todos os critérios, não sendo possível escolher uma por critério.
