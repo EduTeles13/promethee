@@ -44,4 +44,7 @@ Após a importação da planilha, basta selecionar qual o função que prefere u
 
 A aplicação retornará na tela cada problema com os seus respectivos valores de fluxo líquido.
 
-OBS.: Uma limitação desse código é que a função de preferência é aplicada a todos os critérios, não sendo possível escolher uma por critério.
+## Limitações e Melhorias
+
+Uma limitação desse código é que a função de preferência é aplicada a todos os critérios, não sendo possível escolher uma por critério. Além disso, é possível a implementação
+futura do Beta-Promethee, uma melhoria no Promethee II, onde há uma otimização no processo de escolha de critérios.
